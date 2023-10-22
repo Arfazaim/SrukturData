@@ -1,24 +1,13 @@
-def bubble(listku):
-    perubahan = True
-    sesi = len(listku)
-    while sesi > 1 and perubahan:
-        perubahan = False
-        j = 1
-        while j < sesi:
-            if listku[j] < listku[j - 1]:
-                perubahan = True
-                tukar(listku, j, j - 1)
-            j += 1
-        print(listku)
-        if not perubahan:
-            print("hasil akhir = %s" % str(listku))
-        sesi -= 1
-
-print("====================================================================")
-print("Bubble sort")
-input_string = input("Masukkan angka-angka yang akan diurutkan (pisahkan dengan spasi): ")
-mylist = [int(x) for x in input_string.split()]
-print("Sebelum Bubble sort")
-print(mylist)
-print("Setelah Bubble Sort")
-bubble(mylist)
+def selectionSort (alist):
+    for slot in range(len(alist)-1):
+        position=slot
+        for location in range(len(alist)-1,slot,-1):
+            if alist[location]<alist[position]:
+                position = location
+                
+        temp = alist[slot]
+        alist[slot] = alist[position]
+        alist[position] = temp
+alist = [54,26,93,17,77,31,44,55,20]
+selectionSort(alist)
+print(alist)
