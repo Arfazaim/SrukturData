@@ -49,3 +49,27 @@ class LinkedList:
             temp = None
             if(self.head != None):
                 self.head.prev = None
+                
+ll = LinkedList()
+
+while True:
+    print("\n1. Insert First")
+    print("2. Delete First")
+    print("3. Print List")
+    print("4. Exit")
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        data = int(input("Masukkan data untuk dimasukkan di awal: "))
+        ll.insert_first(data)
+    elif choice == 2:
+        ll.del_first()
+        print("Elemen pertama telah dihapus.")
+    elif choice == 3:
+        print("Linked List:")
+        ll.PrintList()
+    elif choice == 4:
+        print("Program berakhir.")
+        break
+    else:
+        print("Pilihan tidak valid. Silakan pilih antara 1-4.") 
